@@ -29,7 +29,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="pt-28 pb-20 md:pt-36 md:pb-28 bg-background paper-texture relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-background paper-texture relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-secondary/10 blur-3xl" />
       <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-accent/10 blur-2xl" />
@@ -41,7 +41,7 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-14"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
             How it works
@@ -52,7 +52,7 @@ export function HowItWorks() {
         </motion.div>
 
         {/* Core Layout Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-center">
           
           {/* Left Column: Vertical Steps Timeline Layout */}
           <div className="lg:col-span-5 flex flex-col gap-8 relative">
@@ -106,13 +106,13 @@ export function HowItWorks() {
                 
                 {/* Clean, fixed YouTube iframe integration component */}
                 <iframe 
-                  className="absolute inset-0 w-full h-full border-0 object-cover"
-                  src="https://www.youtube.com/embed/wwIt5ZvROrs?si=2WZ8ozEvEbn1ffD0" 
+                   className="absolute inset-0 w-full h-full border-0 object-cover"
+                  src="https://www.youtube.com/embed/cHDR60fbYO0?si=yR84NA8PXpuVLLeY" 
                   title="የኔ ቃል Video Tutorial Guide"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
-                /> 
+                />
 
               </div>
             </div>

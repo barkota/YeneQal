@@ -32,32 +32,32 @@ const screenshotTabs = [
     id: "main-grid",
     label: "Main Interface (መነሻ ገጽ)",
     icon: LayoutGrid,
-    title: "Structured Staging Workspace",
-    description: "The layout offers clear Amharic script targets, persistent conversational modifier side-rails (Yes/No, Please, Sorry), and a top sentence assembly strip to stage complex phrases seamlessly.",
+    title: "The main screen",
+    description: "Big, clearly written Amharic words, with everyday replies like Yes, No, Please and Sorry always in the same place down the side. The strip along the top collects each word a child taps, so a full sentence builds up as they go.",
     src: "/screenshots/menesha.png" 
   },
   {
     id: "contexts",
     label: "Family/People (ቤተሰብ/ሰዎች)",
     icon: CalendarDays,
-    title: "Accessible Social Networks",
-    description: "The layout is streamlined to give children an immediate, single-tap way to address family, educators, and peers on a highly visible grid. By pairing these familiar faces with instant emotional expressions transforms social communication into a natural, confident conversation with their entire community.",
+    title: "The people in a child's life",
+    description: "One tap to name mum, dad, a brother, a teacher or a friend. Paired with the feelings buttons, a child can tell the people around them not just who they mean, but how they feel about it.",
     src: "/screenshots/beteseb.png"
   },
   {
     id: "food-grid",
     label: "Food/Drinks (ምግብ/መጠጥ)",
     icon: Utensils,
-    title: "Culturally Grounded Nutrition Mapping",
-    description: "The interface categorizes authentic Ethiopian staples such as Injera (እንጀራ), Shiro (ሽሮ), and Firfir (ፍርፍር). The right-hand modifier rails allow kids to instantly specify satisfaction levels like 'I am full' (ጠገብኩ) or indicate core needs like 'Water' (ውሃ).",
+    title: "Food and drink they actually eat",
+    description: "Real Ethiopian meals \u2014 injera (እንጀራ), shiro (ሽሮ), firfir (ፍርፍር). The buttons down the side let a child add 'I am full' (ጠገብኩ) or simply ask for water (ውሃ).",
     src: "/screenshots/food.png" 
   },
   {
     id: "body-mapping",
     label: "Body/health (አካላት/ጤና)",
     icon: HeartIcon,
-    title: "Direct Visual Symptom Check",
-    description: "Children can tap directly on visual anatomical map profiles to instantly communicate localized physical pain or specific body needs.",
+    title: "Where it hurts",
+    description: "A child taps the part of the body that hurts, so you know what is wrong without a round of guessing.",
     images: [
       "/screenshots/akalat1.png",
       "/screenshots/akalat2.png",
@@ -68,8 +68,8 @@ const screenshotTabs = [
     id: "family-social",
     label: "Items (እቃዎች)",
     icon: PencilIcon,
-    title: "Daily Objects & Belongings",
-    description: "The interface features a highly organized grid designed for quick identification of personal items, clothing, and school supplies. Children can easily express immediate states of ownership or choose specific everyday belongings, transforming routine requests into a seamless, confident interaction with those around them.",
+    title: "Everyday things",
+    description: "Clothes, school supplies and the things a child keeps close, laid out so they can ask for what they want without help.",
     imageAlt: "የኔ ቃል Family, Relational Dynamics and Social Care Grid",
     src: "/screenshots/ekawoch.png"
   }
@@ -119,21 +119,21 @@ export function Screenshots() {
   const activeImgSrc = currentView.images ? currentView.images[carouselIndex] : currentView.src
 
   return (
-    <section id="screenshots" className="py-20 md:py-28 bg-background border-y border-border relative">
+    <section id="screenshots" className="py-12 md:py-24 bg-background border-y border-border relative">
       <div className="container mx-auto px-6">
         
         {/* Section Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             Inside the Interface
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Explore the actual application layout grids engineered to support autonomous motor-planning and cognitive clarity.
+            A look at the real screens children use every day.
           </p>
         </div>
 
         {/* Dynamic Navigation Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12 max-w-5xl mx-auto p-1.5 bg-muted rounded-2xl md:rounded-full">
+        <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-10 max-w-5xl mx-auto p-1.5 bg-muted rounded-2xl md:rounded-full">
           {screenshotTabs.map((tab) => {
             const isSelected = activeTab === tab.id
             return (
@@ -159,7 +159,7 @@ export function Screenshots() {
         </div>
 
         {/* Main Display Box Component */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-card p-6 md:p-10 rounded-3xl border border-border shadow-sm mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-card p-6 md:p-10 rounded-3xl border border-border shadow-sm mb-10 md:mb-14">
           
           {/* Workspace Explanation Block */}
           <div className="lg:col-span-5 flex flex-col justify-center space-y-4">
@@ -247,33 +247,33 @@ export function Screenshots() {
         </div>
 
         {/* Complete Core Modules List Section */}
-        <div className="border-t border-border/60 pt-12">
-          <div className="max-w-2xl mb-8">
-            <h4 className="text-xl font-bold text-foreground mb-2 flex items-center gap-2">
+        <div className="border-t border-border/60 pt-10 md:pt-14">
+          <div className="max-w-2xl mb-6 md:mb-8">
+            <h3 className="text-xl font-bold text-foreground mb-2 flex items-center gap-2">
               Complete Core Modules
-            </h4>
+            </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Beyond the primary areas previewed above, all of these are detailed modules included in the app to provide expansive, well-rounded communicative resources across diverse environments.
+              Alongside the areas shown above, the app comes with all of these, so children have the words they need at home, at school, and out in the world.
             </p>
           </div>
 
           {/* Compact Responsive Grid: 2 columns on mobile, smaller padding and text sizing */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 items-stretch">
             {otherModules.map((module, idx) => {
               const ModuleIcon = module.icon
               return (
                 <div 
                   key={idx} 
-                  className="flex items-center gap-2 sm:gap-3 p-2.5 sm:p-4 rounded-xl bg-card/60 border border-border/50 hover:bg-card hover:border-border transition-colors duration-200"
+                  className="flex items-start gap-2 sm:gap-3 p-2.5 sm:p-4 rounded-xl bg-card/60 border border-border/50 hover:bg-card hover:border-border transition-colors duration-200"
                 >
                   <div className="p-1.5 sm:p-2 rounded-lg bg-primary/10 text-primary shrink-0">
                     <ModuleIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-xs sm:text-sm font-semibold text-foreground tracking-tight truncate">
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <span className="text-xs sm:text-sm font-semibold text-foreground tracking-tight leading-snug break-words">
                       {module.name}
                     </span>
-                    <span className="text-[10px] sm:text-xs font-medium text-muted-foreground/80 mt-0.5 truncate">
+                    <span className="text-[10px] sm:text-xs font-medium text-muted-foreground/80 mt-0.5 leading-snug break-words">
                       {module.amharic}
                     </span>
                   </div>
@@ -282,10 +282,10 @@ export function Screenshots() {
             })}
 
             {/* Custom Vocabulary Upload Box - Tweaked to span 2 columns on mobile for layout harmony */}
-            <div className="col-span-2 sm:col-span-1 flex items-center justify-between p-2.5 sm:p-4 rounded-xl bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 hover:border-primary/20 transition-all duration-200 group cursor-pointer">
-              <div className="flex flex-col">
-                <span className="text-xs sm:text-sm font-bold text-primary">Custom Vocabulary</span>
-                <span className="text-[10px] sm:text-[11px] text-muted-foreground">Add personal assets</span>
+            <div className="col-span-2 sm:col-span-1 flex items-start justify-between gap-2 p-2.5 sm:p-4 rounded-xl bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 hover:border-primary/20 transition-all duration-200 group cursor-pointer">
+              <div className="flex flex-col min-w-0 flex-1">
+                <span className="text-xs sm:text-sm font-bold text-primary leading-snug break-words">Your own words</span>
+                <span className="text-[10px] sm:text-[11px] text-muted-foreground leading-snug break-words">Add family photos and names</span>
               </div>
               <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary transform group-hover:translate-x-1 transition-transform shrink-0" />
             </div>

@@ -11,9 +11,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: 'የኔ ቃል | AAC App for Children',
-  description: 'Helping children express themselves through an easy-to-use Augmentative and Alternative Communication (AAC) app with visual vocabulary and customizable voice options.',
-  keywords: ['AAC', 'communication', 'children', 'speech', 'accessibility', 'education'],
+  title: 'የኔ ቃል (YeneQal) | The first Amharic AAC tablet',
+  description: 'The first Amharic AAC tablet. የኔ ቃል helps non-verbal and speech-delayed children build sentences, ask for what they need, and share their world using pictures and Amharic words they already know.',
+  keywords: ['Amharic AAC', 'AAC tablet', 'communication', 'children', 'speech delay', 'non-verbal', 'accessibility', 'Ethiopia'],
   icons: {
     icon: '/logo.svg',
     apple: '/logo.svg',

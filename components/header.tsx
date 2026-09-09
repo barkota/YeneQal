@@ -39,7 +39,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? "bg-background/90 backdrop-blur-md shadow-sm border-b border-border"
           : "bg-transparent"
       }`}
@@ -72,7 +72,7 @@ export function Header() {
               Modules
             </a>
             <Button
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-5 h-9 font-semibold text-sm"
+              className="bg-primary-strong hover:bg-primary-strong-hover active:bg-primary-strong-active text-white rounded-full px-5 h-9 font-semibold text-sm"
               onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Try Demo
@@ -89,16 +89,16 @@ export function Header() {
 
             {/* Desktop Social Group */}
             <div className="flex items-center gap-3 text-muted-foreground">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/yeneqal" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@yeneqalaac" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="TikTok">
                 <TikTokIcon className="w-4 h-4" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="Instagram">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="Facebook">
+              <a href="https://web.facebook.com/profile.php?id=61590332474208" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="Facebook">
                 <Facebook className="w-4 h-4" />
               </a>
             </div>
@@ -119,7 +119,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border bg-background shadow-lg">
             <nav className="flex flex-col gap-4">
               <a
                 href="#features"
@@ -136,7 +136,7 @@ export function Header() {
                 Modules
               </a>
               <Button
-                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full font-semibold w-full"
+                className="bg-primary-strong hover:bg-primary-strong-hover active:bg-primary-strong-active text-white rounded-full font-semibold w-full"
                 onClick={() => {
                   document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })
                   setIsMobileMenuOpen(false)
@@ -156,16 +156,16 @@ export function Header() {
 
               {/* Mobile Social Tray */}
               <div className="flex items-center gap-5 text-muted-foreground py-2 justify-center sm:justify-start">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/yeneqal" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="TikTok">
+                <a href="https://www.tiktok.com/@yeneqalaac" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="TikTok">
                   <TikTokIcon className="w-5 h-5" />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="Instagram">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="Facebook">
+                <a href="https://web.facebook.com/profile.php?id=61590332474208" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors" aria-label="Facebook">
                   <Facebook className="w-5 h-5" />
                 </a>
               </div>

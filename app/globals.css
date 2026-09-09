@@ -13,6 +13,10 @@
   --popover-foreground: #2D2D2D;
   --primary: #FB441D;
   --primary-foreground: #FFFFFF;
+  /* Darkened brand orange: 4.6:1 against white, for solid buttons with white labels */
+  --primary-strong: #D93A16;
+  --primary-strong-hover: #C13312;
+  --primary-strong-active: #A82C0F;
   --secondary: #FDBC0B;
   --secondary-foreground: #2D2D2D;
   --muted: #FAF6EE;
@@ -51,6 +55,9 @@
   --popover-foreground: #F5F5F5;
   --primary: #FB441D;
   --primary-foreground: #FFFFFF;
+  --primary-strong: #D93A16;
+  --primary-strong-hover: #C13312;
+  --primary-strong-active: #A82C0F;
   --secondary: #FDBC0B;
   --secondary-foreground: #2D2D2D;
   --muted: #3D3D3D;
@@ -90,6 +97,9 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-strong-hover: var(--primary-strong-hover);
+  --color-primary-strong-active: var(--primary-strong-active);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -139,4 +149,31 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   background-blend-mode: soft-light;
   background-size: 200px 200px;
+}
+
+/* Decorative drift for the hero's gutter dots. Motion is opt-in only. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+  .float-slow:nth-of-type(2) { animation-duration: 9s; animation-delay: -2s; }
+  .float-slow:nth-of-type(3) { animation-duration: 8s; animation-delay: -4s; }
+  .float-slow:nth-of-type(4) { animation-duration: 10s; animation-delay: -1s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

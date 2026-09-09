@@ -68,7 +68,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-12 bg-background border-t border-border">
+    <footer className="py-10 md:py-12 bg-background border-t border-border">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
@@ -121,7 +121,7 @@ export function Footer() {
           {/* Social Media Links */}
           <div className="flex items-center gap-4">
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/company/yeneqal" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-foreground transition-colors p-1"
@@ -130,7 +130,7 @@ export function Footer() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a 
-              href="https://tiktok.com" 
+              href="https://www.tiktok.com/@yeneqalaac" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-foreground transition-colors p-1"
@@ -148,7 +148,7 @@ export function Footer() {
               <Instagram className="w-5 h-5" />
             </a>
             <a 
-              href="https://facebook.com" 
+              href="https://web.facebook.com/profile.php?id=61590332474208" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-foreground transition-colors p-1"

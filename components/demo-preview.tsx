@@ -137,20 +137,20 @@ export function DemoPreview() {
   const currentCategoryObj = categories.find(c => c.id === activeCategory)
 
   return (
-    <section id="demo" className="py-20 md:py-28 bg-card">
+    <section id="demo" className="py-12 md:py-24 bg-card">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
             Try it yourself
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Experience our app's voice in action with this interactive demo.
+            Tap a few pictures to build a message, then press ተናገር to hear it spoken aloud.
           </p>
         </motion.div>
 
@@ -164,10 +164,10 @@ export function DemoPreview() {
           <div className="bg-background rounded-3xl shadow-xl border border-border overflow-hidden">
             {/* Message Strip */}
             <div className="p-4 bg-muted border-b border-border">
-              <div className="flex items-center gap-3">
-                <div className="flex-1 min-h-[56px] bg-background rounded-2xl border border-border px-4 py-2 flex items-center gap-2 flex-wrap">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <div className="flex-1 min-w-0 min-h-[56px] bg-background rounded-2xl border border-border px-4 py-2 flex items-center gap-2 flex-wrap">
                   {selectedItems.length === 0 ? (
-                    <span className="text-muted-foreground">Tap items below to build a message...</span>
+                    <span className="text-muted-foreground">Tap the pictures below to build a message…</span>
                   ) : (
                     selectedItems.map((item, index) => (
                       <span
@@ -181,28 +181,33 @@ export function DemoPreview() {
                   )}
                 </div>
                 
-                {/* Updated Clear Button (አጥፋ) */}
+                <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                {/* Clear (አጥፋ) - deliberately secondary: outlined, never competes with Speak */}
                 <Button
                   onClick={handleClear}
-                  variant="ghost"
-                  className="shrink-0 rounded-xl hover:bg-destructive/10 hover:text-destructive flex items-center gap-2 px-3 md:px-5 font-bold tracking-wide transition-all border border-transparent"
-                  disabled={selectedItems.length === 0}
+                  variant="outline"
+                  className="flex-1 sm:flex-none h-11 rounded-xl flex items-center justify-center gap-2 px-3 md:px-4 font-semibold tracking-wide border border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground active:bg-muted/80 transition-colors"
+                  aria-disabled={selectedItems.length === 0}
                 >
                   <Trash2 className="w-5 h-5" />
                   <span className="text-sm md:text-base">አጥፋ</span>
                 </Button>
 
-                {/* Updated Speak Button (ተናገር) */}
+                {/* Speak (ተናገር) - the primary control. Solid brand orange, white label at 4.6:1. */}
                 <Button
                   onClick={handleSpeak}
-                  className={`shrink-0 rounded-xl flex items-center gap-2 px-3 md:px-5 font-bold tracking-wide transition-all ${
-                    isSpeaking ? 'bg-teal' : 'bg-primary'
-                  } text-white hover:opacity-90`}
-                  disabled={selectedItems.length === 0}
+                  className={`flex-1 sm:flex-none h-11 rounded-xl flex items-center justify-center gap-2 px-4 md:px-6 font-bold tracking-wide text-white shadow-md transition-colors focus-visible:ring-4 focus-visible:ring-primary/30 ${
+                    isSpeaking
+                      ? "bg-teal hover:bg-teal"
+                      : "bg-primary-strong hover:bg-primary-strong-hover active:bg-primary-strong-active"
+                  }`}
+                  aria-disabled={selectedItems.length === 0}
+                  aria-label="Speak the message"
                 >
-                  <Volume2 className={`w-5 h-5 ${isSpeaking ? 'animate-pulse' : ''}`} />
+                  <Volume2 className={`w-5 h-5 ${isSpeaking ? "animate-pulse" : ""}`} />
                   <span className="text-sm md:text-base">ተናገር</span>
                 </Button>
+                </div>
               </div>
             </div>
 
