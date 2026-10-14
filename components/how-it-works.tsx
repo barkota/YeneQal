@@ -107,7 +107,7 @@ export function HowItWorks() {
                 {/* Clean, fixed YouTube iframe integration component */}
                 <iframe 
                    className="absolute inset-0 w-full h-full border-0 object-cover"
-                  src="https://www.youtube.com/embed/cHDR60fbYO0?si=yR84NA8PXpuVLLeY" 
+                  src="https://www.youtube.com/embed/6l5fnlUuM2c?si=ItqNvEEnHxLpW7Ut"
                   title="የኔ ቃል Video Tutorial Guide"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin"
